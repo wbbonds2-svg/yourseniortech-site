@@ -22,18 +22,31 @@ BING_VERIFY = ""       # Bing Webmaster Tools verification code
 ORG = "Senior Tech Foundation"
 PHONE = "253-617-5848"
 PHONE_TEL = "+12536175848"
-EMAIL = "ashlyn@yourseniortech.com"
+EMAIL = "ashlyn@yourseniortech.com"          # forms + Executive Director
+SUPPORT_EMAIL = "support@yourseniortech.com" # general questions
 FORM_ACTION = f"https://formsubmit.co/{EMAIL}"
 DONATE_URL = "https://givebutter.com/senior-tech-foundation"
 CANDID_URL = "https://app.candid.org/profile/16534654/senior-tech-foundation-41-3502697/?pkId=623db530-bc49-486c-adfc-15c1859d2234"
 CANDID_SEAL = "https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/16534654/svg"
 EIN = "41-3502697"
 SOCIAL = [
-    ("Facebook", "https://www.facebook.com/seniortechFDN"),
-    ("Instagram", "https://www.instagram.com/seniortechfoundation"),
-    ("LinkedIn", "https://www.linkedin.com/company/your-senior-tech/"),
-    ("TikTok", "https://www.tiktok.com/@seniortechfoundation"),
+    ("Facebook", "https://www.facebook.com/seniortechFDN", "@seniortechFDN"),
+    ("Instagram", "https://www.instagram.com/seniortechfoundation", "@seniortechfoundation"),
+    ("LinkedIn", "https://www.linkedin.com/company/your-senior-tech/", "Senior Tech Foundation"),
+    ("TikTok", "https://www.tiktok.com/@seniortechfoundation", "@seniortechfoundation"),
 ]
+ICONS = {
+    "Facebook": '<path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/>',
+    "Instagram": '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3"/>',
+    "LinkedIn": '<rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2.2"/><path d="M10 9h3.8v1.8c.6-1.1 2-2.1 4-2.1 3.3 0 4.2 2.1 4.2 5V21h-4v-6.3c0-1.5-.3-2.7-1.9-2.7s-2.1 1.2-2.1 2.7V21h-4z"/>',
+    "TikTok": '<path d="M15 3c.4 2.6 2 4.3 4.6 4.5v3.6c-1.7 0-3.2-.5-4.5-1.4v6.4a5.6 5.6 0 1 1-5.6-5.6c.3 0 .7 0 1 .1v3.7a2 2 0 1 0 1.4 1.9V3z"/>',
+}
+
+
+def social_links(cls="social"):
+    return f'<div class="{cls}">' + "".join(
+        f'<a href="{u}" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">{ICONS[n]}</svg><span>{n}</span></a>'
+        for n, u, _ in SOCIAL) + "</div>"
 TAGLINE = "It’s like having your grandkids help you with tech."
 
 # Impact figures from the Foundation's 2026 Mobile Tech Clinic sponsorship packet.
@@ -97,7 +110,11 @@ def org_ld():
             {"@type": "AdministrativeArea", "name": "King County, Washington"},
             {"@type": "AdministrativeArea", "name": "Pierce County, Washington"},
         ],
-        "sameAs": [u for _, u in SOCIAL] + [CANDID_URL],
+        "sameAs": [u for _, u, _ in SOCIAL] + [CANDID_URL, DONATE_URL],
+        "contactPoint": [
+            {"@type": "ContactPoint", "contactType": "customer support", "email": SUPPORT_EMAIL, "telephone": PHONE_TEL, "areaServed": "US-WA", "availableLanguage": "English"},
+            {"@type": "ContactPoint", "contactType": "partnerships", "email": EMAIL, "telephone": PHONE_TEL},
+        ],
     }
 
 
@@ -132,7 +149,7 @@ def header(active):
     return f"""<a class="skip" href="#main">Skip to main content</a>
 <div class="topbar"><div class="wrap">
   <span>Free technology help for older adults in King &amp; Pierce Counties</span>
-  <span>Questions? Call <a href="tel:{PHONE_TEL}">{PHONE}</a></span>
+  <span>Questions? Call <a href="tel:{PHONE_TEL}">{PHONE}</a> or email <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a></span>
 </div></div>
 <header class="site-header"><div class="wrap">
   <a class="brand" href="{url('/')}"><img src="{url('/assets/img/logo-120.png')}" width="169" height="120" alt="{ORG} home"><span>{ORG}</span></a>
@@ -147,14 +164,14 @@ def header(active):
 
 
 def footer():
-    social = "".join(f'<a href="{u}" rel="noopener" target="_blank">{n}</a>' for n, u in SOCIAL)
     return f"""<footer class="site-footer"><div class="wrap">
   <div class="foot-grid">
     <div>
       <img class="foot-logo" src="{url('/assets/img/logo-120.png')}" width="169" height="120" alt="{ORG}">
       <p>{ORG} is a Washington 501(c)(3) nonprofit. Trained student mentors give older adults free, patient technology help.</p>
-      <p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a><br>Serving King &amp; Pierce Counties, WA</p>
-      <div class="social">{social}</div>
+      <p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a><br>Serving King &amp; Pierce Counties, WA</p>
+      <h2>Follow us</h2>
+      {social_links()}
     </div>
     <div>
       <h2>Get help</h2>
@@ -165,6 +182,7 @@ def footer():
         <li><a href="{url('/scam-prevention-for-seniors/')}">Scam prevention</a></li>
         <li><a href="{url('/ai-classes-for-seniors/')}">AI for older adults</a></li>
         <li><a href="{url('/events/')}">Upcoming events</a></li>
+        <li><a href="{url('/free-tech-help-seniors-king-county/')}">King County</a></li>
         <li><a href="{url('/faq/')}">Questions &amp; answers</a></li>
       </ul>
     </div>
@@ -465,6 +483,11 @@ def home():
   <p style="margin-top:24px"><a href="{url('/faq/')}">See all questions and answers</a></p>
 </div></section>
 
+<section class="section section--navy"><div class="wrap band">
+  <div><h2>Follow Senior Tech Foundation</h2><p>Clinic photos, tech tips, and scam alerts on social media.</p></div>
+  {social_links()}
+</div></section>
+
 <section class="section"><div class="wrap">
   <h2>Get involved</h2>
   <div class="paths">
@@ -549,7 +572,9 @@ def build_programs():
 <li><a href="{url('/scam-prevention-for-seniors/')}">Scam prevention workshops</a></li>
 <li><a href="{url('/ai-classes-for-seniors/')}">AI for older adults</a></li>
 <li><a href="{url('/technology-classes-for-seniors/')}">Wellness through technology</a>: fitness, meditation, and virtual exercise apps</li>
-</ul>""",
+</ul>
+<h2>Where we help</h2>
+<p>We serve older adults across <a href="{url('/free-tech-help-seniors-king-county/')}">King County</a> and Pierce County, Washington.</p>""",
         [("Is the help really free?", fq["Is the help really free?"]),
          ("What devices can you help with?", fq["What devices can you help with?"]),
          ("What should I bring?", fq["What should I bring?"]),
@@ -667,6 +692,34 @@ def build_programs():
         default_cta)
 
 
+def build_locations():
+    fq = dict(faq_items())
+    body = page_head("Free Tech Help for Seniors in King County, WA",
+                     "Free, in-person technology help for older adults across King County, from trained student mentors.") + f"""
+<section class="section"><div class="wrap split" style="align-items:start">
+  <div class="content">
+    <div class="answer"><p><b>Where can seniors get free tech help in King County?</b> {ORG}, a Washington nonprofit, runs free Mobile Tech Clinics and workshops at senior centers, libraries, and community spaces in King County. Trained student mentors help one-on-one with phones, tablets, computers, and scam questions. Call <a href="tel:{PHONE_TEL}">{PHONE}</a> or see <a href="{url('/events/')}">upcoming clinics</a>.</p></div>
+    <h2>Recent clinics in King County</h2>
+    <p>In August 2026 we held a Technology Help for Seniors pop-up clinic at the Kent Senior Center with the City of Kent. Older adults brought their phones, tablets, and laptops and worked one-on-one with our student mentors on accounts, settings, photos, and scam questions.</p>
+    <h2>What we offer in King County</h2>
+    <ul>
+      <li><a href="{url('/mobile-tech-clinics/')}">Mobile Tech Clinics</a> with one-on-one help</li>
+      <li><a href="{url('/technology-classes-for-seniors/')}">Tech Talks and workshops</a> for groups</li>
+      <li><a href="{url('/scam-prevention-for-seniors/')}">Scam prevention education</a></li>
+      <li><a href="{url('/ai-classes-for-seniors/')}">AI for older adults</a></li>
+    </ul>
+    <h2>Host a clinic in King County</h2>
+    <p>Senior centers, libraries, retirement and housing communities, faith organizations, and cities in King County can host a free clinic or workshop. <a href="{url('/community-partnerships/')}">Request a program</a>.</p>
+  </div>
+  <div>{img('one-on-one', 'A student mentor helps an older man with his phone at the Kent Senior Center clinic')}</div>
+</div></section>
+<section class="section section--sky"><div class="wrap"><h2>Common questions</h2>{faq_block([(q, fq[q]) for q in ["Is the help really free?", "What devices can you help with?", "What should I bring?", "How can my community host a free clinic or workshop?"]])}</div></section>
+{cta_band('Get free tech help in King County', 'Find a clinic near you or bring one to your community.', [('Find a clinic', url('/events/'), 'btn--sun'), ('Request a program', url('/community-partnerships/'), 'btn--light')])}"""
+    page("/free-tech-help-seniors-king-county/", "Free Tech Help for Seniors in King County, WA | Senior Tech Foundation",
+         "Free in-person tech help for older adults in King County, Washington: Mobile Tech Clinics, one-on-one help, and scam prevention from trained student mentors.",
+         body, trail=[("Home", "/"), ("Free tech help", "/free-tech-help-for-seniors/"), ("King County", "/free-tech-help-seniors-king-county/")], og_image="one-on-one-800.webp")
+
+
 # ---- Events ------------------------------------------------------------------
 def load_events():
     f = TOOLS / "events.json"
@@ -678,25 +731,65 @@ def upcoming_events():
     return sorted([x for x in load_events() if x.get("date", "") >= today], key=lambda x: (x["date"], x.get("start", "")))
 
 
-def event_html(x, compact=False):
+def event_slug(x):
+    return x["date"] + "-" + re.sub(r"[^a-z0-9]+", "-", x["title"].lower()).strip("-")
+
+
+def _t24(v, default):
+    return datetime.strptime(v, "%I:%M %p").strftime("%H%M") if v else default
+
+
+def gcal_link(x):
+    from urllib.parse import quote
+    d = x["date"].replace("-", "")
+    dates = f"{d}T{_t24(x.get('start'), '1000')}00/{d}T{_t24(x.get('end'), '1200')}00"
+    return ("https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + quote(x["title"]) + "&dates=" + dates +
+            "&ctz=America/Los_Angeles&details=" + quote(x.get("description", "") + " Free for older adults. " + abs_url("/events/")) +
+            "&location=" + quote(x["location_name"] + ", " + x.get("address", "")))
+
+
+def write_ics(x):
+    d = x["date"].replace("-", "")
+    ics = "\r\n".join([
+        "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Senior Tech Foundation//Events//EN", "BEGIN:VEVENT",
+        f"UID:{event_slug(x)}@seniortechfoundation", f"DTSTAMP:{datetime.now().strftime('%Y%m%dT%H%M%S')}",
+        f"DTSTART;TZID=America/Los_Angeles:{d}T{_t24(x.get('start'), '1000')}00",
+        f"DTEND;TZID=America/Los_Angeles:{d}T{_t24(x.get('end'), '1200')}00",
+        "SUMMARY:" + x["title"], "LOCATION:" + (x["location_name"] + ", " + x.get("address", "")).replace(",", "\\,"),
+        "DESCRIPTION:" + x.get("description", "").replace(",", "\\,") + " " + abs_url("/events/"),
+        "END:VEVENT", "END:VCALENDAR", ""])
+    out = ROOT / "events" / "ics" / (event_slug(x) + ".ics")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(ics)
+    return url(f"/events/ics/{event_slug(x)}.ics")
+
+
+def event_html(x, compact=False, past=False):
     d = datetime.strptime(x["date"], "%Y-%m-%d")
     reg = f'<a class="btn btn--primary" href="{e(x["registration_url"])}">Register</a>' if x.get("registration_url") else ""
     access = f'<p class="small"><b>Accessibility:</b> {e(x["accessibility"])}</p>' if x.get("accessibility") and not compact else ""
-    return f"""<article class="event">
+    when = f"<b>{d.strftime('%A, %B')} {d.day}, {d.year}</b>"
+    if x.get("start"):
+        when += f", {e(x['start'])}–{e(x.get('end',''))}"
+    addcal = ""
+    if not past:
+        addcal = f"""<div class="btn-row" style="margin-top:12px">{reg}<a class="btn btn--outline" href="{e(gcal_link(x))}" rel="noopener" target="_blank">Add to Google Calendar</a><a class="btn btn--outline" href="{write_ics(x)}" download>Add to Apple / Outlook calendar</a></div>"""
+    return f"""<article class="event" id="event-{event_slug(x)}">
   <div class="event-date"><span>{d.strftime('%b')}</span><b>{d.day}</b><span>{d.strftime('%a')}</span></div>
   <div><h3>{e(x['title'])}</h3>
-  <p><b>{d.strftime('%A, %B')} {d.day}</b>, {e(x.get('start',''))}–{e(x.get('end',''))}<br>{e(x['location_name'])}, {e(x.get('address',''))}</p>
-  <p>{e(x.get('description',''))}</p>{access}{reg}</div>
+  <p>{when}<br>{e(x['location_name'])}{', ' + e(x['address']) if x.get('address') else ''}</p>
+  <p>{e(x.get('description',''))}</p>{access}{addcal}</div>
 </article>"""
 
 
 def event_ld(x):
-    tz = "-07:00"
-    def t(v):
-        return datetime.strptime(v, "%I:%M %p").strftime("%H:%M") if v else "10:00"
+    from zoneinfo import ZoneInfo
+    def t(v, default):
+        hm = datetime.strptime(v, "%I:%M %p").strftime("%H:%M") if v else default
+        return datetime.fromisoformat(f"{x['date']}T{hm}:00").replace(tzinfo=ZoneInfo("America/Los_Angeles")).isoformat()
     return {
         "@context": "https://schema.org", "@type": "Event", "name": x["title"],
-        "startDate": f"{x['date']}T{t(x.get('start'))}:00{tz}", "endDate": f"{x['date']}T{t(x.get('end'))}:00{tz}",
+        "startDate": t(x.get('start'), "10:00"), "endDate": t(x.get('end'), "12:00"),
         "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {"@type": "Place", "name": x["location_name"], "address": x.get("address", "")},
         "description": x.get("description", ""), "isAccessibleForFree": True,
@@ -706,19 +799,71 @@ def event_ld(x):
     }
 
 
+def past_events():
+    today = date.today().isoformat()
+    return sorted([x for x in load_events() if x.get("date", "") < today], key=lambda x: x["date"], reverse=True)
+
+
+def calendar_html():
+    data = [{"date": x["date"], "title": x["title"], "id": "event-" + event_slug(x), "past": x["date"] < date.today().isoformat()} for x in load_events()]
+    return f"""<div class="cal" id="cal" aria-label="Events calendar">
+  <div class="cal-head">
+    <button type="button" class="cal-nav" data-step="-1" aria-label="Previous month">&#8249; <span>Previous</span></button>
+    <h2 class="cal-title" aria-live="polite"></h2>
+    <button type="button" class="cal-nav" data-step="1" aria-label="Next month"><span>Next</span> &#8250;</button>
+  </div>
+  <table class="cal-grid"><thead><tr><th scope="col" abbr="Sunday">Sun</th><th scope="col" abbr="Monday">Mon</th><th scope="col" abbr="Tuesday">Tue</th><th scope="col" abbr="Wednesday">Wed</th><th scope="col" abbr="Thursday">Thu</th><th scope="col" abbr="Friday">Fri</th><th scope="col" abbr="Saturday">Sat</th></tr></thead><tbody></tbody></table>
+  <p class="cal-note small"></p>
+</div>
+<script type="application/json" id="events-data">{json.dumps(data)}</script>
+<script>
+(function(){{
+  var ev=JSON.parse(document.getElementById('events-data').textContent), cal=document.getElementById('cal');
+  var now=new Date(), view=new Date(now.getFullYear(), now.getMonth(), 1);
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function pad(n){{return n<10?'0'+n:''+n;}}
+  function draw(){{
+    var y=view.getFullYear(), m=view.getMonth(), first=new Date(y,m,1).getDay(), days=new Date(y,m+1,0).getDate();
+    cal.querySelector('.cal-title').textContent=months[m]+' '+y;
+    var html='<tr>', count=0, today=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+    for(var i=0;i<first;i++) html+='<td class="cal-empty"></td>';
+    for(var d=1; d<=days; d++){{
+      var key=y+'-'+pad(m+1)+'-'+pad(d), list=ev.filter(function(x){{return x.date===key;}});
+      var cls=(key===today?' cal-today':'')+(list.length?' cal-has':'');
+      html+='<td class="'+cls.trim()+'"><span class="cal-day">'+d+'</span>';
+      list.forEach(function(x){{ count++; html+='<a class="cal-event'+(x.past?' cal-past':'')+'" href="#'+x.id+'">'+x.title+'</a>'; }});
+      html+='</td>';
+      if((first+d)%7===0 && d<days) html+='</tr><tr>';
+    }}
+    var rem=(7-(first+days)%7)%7; for(i=0;i<rem;i++) html+='<td class="cal-empty"></td>';
+    cal.querySelector('tbody').innerHTML=html+'</tr>';
+    cal.querySelector('.cal-note').textContent = count ? (count+' event'+(count>1?'s':'')+' this month. Select an event for details.') : 'No clinics are scheduled this month yet. Check back soon, or call {PHONE}.';
+  }}
+  cal.querySelectorAll('.cal-nav').forEach(function(b){{ b.addEventListener('click', function(){{ view.setMonth(view.getMonth()+(+b.dataset.step)); draw(); }}); }});
+  draw();
+}})();
+</script>"""
+
+
 def build_events():
     up = upcoming_events()
+    past = past_events()
     if up:
-        listing = "".join(event_html(x) for x in up)
+        listing = "<h2>Upcoming clinics &amp; workshops</h2>" + "".join(event_html(x) for x in up)
     else:
         listing = f"""<div class="empty"><h2>New clinic dates are on the way</h2>
-<p>We post Mobile Tech Clinics and workshops here as soon as host sites confirm them. To find out about the next clinic near you, call <a href="tel:{PHONE_TEL}">{PHONE}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></div>"""
+<p>We post Mobile Tech Clinics and workshops here as soon as host sites confirm them. To find out about the next clinic near you, call <a href="tel:{PHONE_TEL}">{PHONE}</a> or email <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.</p></div>"""
+    past_html = ""
+    if past:
+        past_html = '<section class="section"><div class="wrap"><h2>Recent clinics</h2>' + "".join(event_html(x, past=True) for x in past[:6]) + "</div></section>"
     body = page_head("Upcoming Tech Clinics &amp; Events",
                      "Free Mobile Tech Clinics and Tech Talks for older adults in King and Pierce Counties.") + f"""
 <section class="section"><div class="wrap">
   <div class="answer"><p>All events are <b>free</b> for older adults, families, and caregivers. Bring any device you need help with, its charger, and your questions.</p></div>
-  {listing}
+  {calendar_html()}
+  <div style="margin-top:48px">{listing}</div>
 </div></section>
+{past_html}
 <section class="section section--sky"><div class="wrap split">
   {img('events', 'Technology help sign welcoming seniors to a clinic at a senior center')}
   <div><h2>Want a clinic in your community?</h2>
@@ -726,7 +871,7 @@ def build_events():
   <a class="btn btn--primary" href="{url('/community-partnerships/')}">Request a program</a></div>
 </div></section>"""
     page("/events/", "Upcoming Free Senior Tech Clinics & Events | Senior Tech Foundation",
-         "Dates, times, and locations of free Mobile Tech Clinics and Tech Talks for older adults in King and Pierce Counties, Washington.",
+         "Calendar of free Mobile Tech Clinics and Tech Talks for older adults in King and Pierce Counties, Washington, with dates, times, and locations.",
          body, trail=[("Home", "/"), ("Events", "/events/")], extra_ld=[event_ld(x) for x in up], og_image="events-800.webp")
 
 
@@ -1056,9 +1201,14 @@ def build_misc():
 <section class="section"><div class="wrap split" style="align-items:start">
   <div>
     <h2>Call or email</h2>
-    <p class="lead"><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+    <p class="lead"><a href="tel:{PHONE_TEL}">{PHONE}</a></p>
+    <p><b>General questions and tech help:</b><br><a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a></p>
+    <p><b>Partnerships, sponsorships, and media:</b><br>Ashlyn Sidhu, Executive Director<br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
     <p>Serving King &amp; Pierce Counties, Washington.</p>
     <p>Looking for help with a device? The fastest way is to come to a <a href="{url('/events/')}">free tech clinic</a>.</p>
+    <h2>Follow us</h2>
+    <p>See photos from recent clinics, tech tips, and scam alerts.</p>
+    {social_links('social social--light')}
   </div>
   <div><h2>Send a message</h2>{form}</div>
 </div></section>"""
@@ -1126,6 +1276,7 @@ if __name__ == "__main__":
     home()
     build_programs()
     build_events()
+    build_locations()
     build_partnerships()
     build_sponsor()
     build_about()
