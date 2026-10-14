@@ -548,6 +548,7 @@ def build_programs():
 <li><a href="{url('/technology-classes-for-seniors/')}">Tech Talks &amp; classes</a>: group learning on everyday topics</li>
 <li><a href="{url('/scam-prevention-for-seniors/')}">Scam prevention workshops</a></li>
 <li><a href="{url('/ai-classes-for-seniors/')}">AI for older adults</a></li>
+<li><a href="{url('/technology-classes-for-seniors/')}">Wellness through technology</a>: fitness, meditation, and virtual exercise apps</li>
 </ul>""",
         [("Is the help really free?", fq["Is the help really free?"]),
          ("What devices can you help with?", fq["What devices can you help with?"]),
@@ -592,9 +593,12 @@ def build_programs():
 <li>Email, messaging, and video calls</li>
 <li>Navigating common apps and settings</li>
 <li>Passwords, passkeys, and account security</li>
+<li>Health and wellness apps, meditation, and virtual exercise</li>
 <li><a href="{url('/scam-prevention-for-seniors/')}">Scam and fraud prevention</a></li>
 <li><a href="{url('/ai-classes-for-seniors/')}">Artificial intelligence, explained simply</a></li>
 </ul>
+<h2>Wellness through technology</h2>
+<p>Some sessions focus on health and well-being. Participants learn to use fitness apps, meditation programs, and virtual exercise classes, building healthy habits and confidence with technology at the same time.</p>
 <h2>How sessions work</h2>
 <p>Sessions can be one-time events or an ongoing series. We tailor each one to the group’s interests and comfort level, and we use real-world examples. Participants can ask questions and talk through real concerns.</p>
 <h2>Designed for</h2>
@@ -752,23 +756,31 @@ def build_partnerships():
       <li><a href="{url('/ai-classes-for-seniors/')}">AI for older adults</a></li>
       <li>Recurring on-site support so residents have a familiar, trusted presence</li>
     </ul>
-    <h2>Why communities partner with us</h2>
-    <ul>
-      <li>Residents gain confidence and independence with technology</li>
-      <li>Scam prevention reduces risk and stress for residents, families, and staff</li>
-      <li>Technology questions no longer fall on busy staff</li>
-      <li>Intergenerational connection between residents and student mentors</li>
-      <li>Programs are tailored to each community’s needs</li>
-    </ul>
+    <h2>Community Tech Partnership</h2>
+    <p>The Community Tech Partnership is a recurring, on-site support program for senior living communities. Through scheduled visits, our team becomes a consistent, familiar presence, so residents have reliable access to technology help over time instead of one-time fixes.</p>
+    <p>Residents benefit from continuity, trust, and growing confidence. Communities get a structured, dependable service. Scheduling, frequency, and focus are customized to each community’s goals and residents’ needs.</p>
   </div>
   <div>{img('partners', 'A Senior Tech Foundation volunteer helps a visitor at an information table')}</div>
 </div></section>
-<section class="section section--sky" id="request"><div class="wrap">
+<section class="section section--sky"><div class="wrap">
+  <h2>Benefits for senior living communities</h2>
+  <div class="cols-2">
+    <div><h3>Meaningful intergenerational engagement</h3><p class="small">Residents get patient, respectful support from young people who take time to listen, and students gain real-world experience and empathy. Tech help becomes engagement that enriches community culture.</p></div>
+    <div><h3>Resident satisfaction and confidence</h3><p class="small">Residents feel comfortable asking questions and learning at their own pace. As confidence grows, frustration drops and residents feel more connected to family, friends, and daily life.</p></div>
+    <div><h3>Appeal to prospective residents and families</h3><p class="small">Reliable tech support signals a modern, resident-focused community, and reassures families that technology needs will be handled.</p></div>
+    <div><h3>Ongoing, consistent support</h3><p class="small">Recurring visits create a familiar, dependable presence. Residents know who to turn to, and trust builds over time.</p></div>
+    <div><h3>Better digital safety</h3><p class="small">Scam prevention education helps protect residents from financial loss, identity theft, and online threats, reducing stress for residents, families, and staff.</p></div>
+    <div><h3>Less burden on staff</h3><p class="small">Technology questions often fall to staff who already have full workloads. We handle them directly so staff can focus on care, programming, and operations.</p></div>
+    <div><h3>Flexible programming</h3><p class="small">Schedules, focus areas, and sessions are tailored to each community and adapt as residents’ interests change.</p></div>
+    <div><h3>A trusted partner</h3><p class="small">We communicate clearly, show up consistently, and understand how senior living communities work.</p></div>
+  </div>
+</div></section>
+<section class="section" id="request"><div class="wrap">
   <h2>Request a free program</h2>
   <p>Fields marked <span class="req">*</span> are required. We usually reply within a few business days.</p>
   {form}
 </div></section>
-<section class="section"><div class="wrap">
+<section class="section section--sky"><div class="wrap">
   <h2>Sponsors &amp; community partners</h2>
   <p>Thank you to the organizations that help keep our programs free.</p>
   {partner_logos()}
@@ -832,11 +844,22 @@ def build_sponsor():
   {img('clinic', 'Student mentors helping older adults at a sponsored Mobile Tech Clinic')}
 </div></section>
 <section class="section section--sky"><div class="wrap">
+  <h2>Why businesses partner with us</h2>
+  <div class="cols-3">
+    <div><h3>Authentic community impact</h3><p class="small">Your support protects seniors from scams, reduces digital exclusion, and improves access to technology in a way that’s easy to understand and stand behind.</p></div>
+    <div><h3>Social responsibility goals</h3><p class="small">Senior tech access, digital safety, and intergenerational programs align with priorities around inclusion, education, workforce development, and community well-being.</p></div>
+    <div><h3>Workforce readiness</h3><p class="small">Support programs that give students real-world experience, communication skills, and empathy.</p></div>
+    <div><h3>Brand visibility and trust</h3><p class="small">Be associated with trust, safety, and positive outcomes for families and local communities.</p></div>
+    <div><h3>Flexible options</h3><p class="small">Sponsor a single clinic, a series, a specific community, or an educational initiative.</p></div>
+    <div><h3>No operational burden</h3><p class="small">We handle program delivery, coordination, and mentors. You get visible impact without extra work.</p></div>
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
   <h2>Choose your sponsorship</h2>
   <div class="paths paths--3">{tier_html}</div>
   <p class="note"><b>Location options:</b> host at your organization, a library, community center, or another accessible space. Hosts provide tables, chairs, power, and Wi-Fi when available. Need a venue? We can coordinate with a city or community partner and confirm the final location before invoicing.</p>
 </div></section>
-<section class="section" id="form"><div class="wrap">
+<section class="section section--sky" id="form"><div class="wrap">
   <h2>Sponsorship form</h2>
   <p>Fields marked <span class="req">*</span> are required. Prefer paper? <a href="{url('/assets/senior-tech-foundation-clinic-sponsorship-2026.pdf')}">Download the sponsorship packet (PDF)</a>.</p>
   {form}
@@ -873,6 +896,11 @@ def build_about():
   {img('about', 'Student mentors helping an older man at a Senior Tech Foundation clinic')}
 </div></section>
 <section class="section section--sky"><div class="wrap content">
+  <h2>Why this work matters</h2>
+  <p>As technology keeps changing, many seniors are being left behind. Without access to patient, trustworthy help, older adults face a higher risk of scams, misinformation, and social isolation. This gap isn’t only about tech skills. It affects independence, safety, and quality of life.</p>
+  <p>The Foundation started because so many older adults were struggling to use digital tools for communication, healthcare, and safety, and that lack of support was leading to frustration, isolation, and vulnerability.</p>
+  <h2>Our long-term vision</h2>
+  <p>A future where every senior has the skills, confidence, and support to thrive in a digital world. We’re building inclusive, community-based programs that promote digital literacy, protect vulnerable people, and make sure technology empowers older adults instead of shutting them out.</p>
   <h2>Our story</h2>
   <p>What started as helping with simple tech questions revealed a deeper problem. Seniors weren’t just struggling with devices. They were worried about clicking the wrong thing, falling for scams, losing access to important accounts, or feeling embarrassed to ask for help. Too often, support was rushed, impersonal, or simply unavailable.</p>
   <p>We saw how different things became when help was patient and personal. When someone sat down, explained things clearly, and answered questions without judgment, confidence grew. A confusing phone became manageable. A suspicious text became a teachable moment. Sometimes a single conversation prevented a scam.</p>
@@ -987,6 +1015,18 @@ def build_misc():
     <p class="small">Businesses can also <a href="{url('/sponsor/')}">sponsor a Mobile Tech Clinic</a>.</p>
   </div>
   {img('clinic', 'Older adults receiving free help from student mentors')}
+</div></section>
+<section class="section section--sky"><div class="wrap">
+  <h2>How we use funding</h2>
+  <p>We’re committed to transparency. Here’s how funding supports our programs for seniors, students, and communities.</p>
+  <div class="cols-3">
+    <div><h3>Devices for low-income seniors</h3><p class="small">Providing smartphones, tablets, and computers to older adults who need them.</p></div>
+    <div><h3>Free scam-prevention programs</h3><p class="small">Workshops and take-home materials that teach seniors to stay safe online.</p></div>
+    <div><h3>Community workshops</h3><p class="small">Local events that improve digital literacy and social connection.</p></div>
+    <div><h3>Student mentor stipends</h3><p class="small">Supporting the student mentors who give hands-on help.</p></div>
+    <div><h3>Expanding to underserved areas</h3><p class="small">Bringing programs to communities with the greatest need.</p></div>
+  </div>
+  <p class="note">See our full financial transparency profile on <a href="{CANDID_URL}" rel="noopener">Candid</a>.</p>
 </div></section>"""
     page("/donate/", "Donate | Senior Tech Foundation",
          "Donate to Senior Tech Foundation to keep free tech help, Mobile Tech Clinics, and scam prevention education available to older adults in Washington.",
