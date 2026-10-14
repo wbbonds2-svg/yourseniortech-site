@@ -1,0 +1,73 @@
+{
+    "0": false,
+    "nav_menu_locations": {
+        "top": 2
+    },
+    "osf_theme_google_fonts": "https:\/\/fonts.googleapis.com\/css?family=Barlow%3A400%7CBebas+Neue%3A400%7CBarlow%3A500%7CBarlow%3A700&#038;subset=latin-ext%2Clatin%2Clatin%2Clatin",
+    "osf_typography_general_body_font": {
+        "family": "Barlow",
+        "subsets": "latin-ext",
+        "fontWeight": "400"
+    },
+    "osf_typography_general_heading_font": {
+        "family": "Bebas Neue",
+        "subsets": "latin",
+        "fontWeight": "400"
+    },
+    "osf_typography_general_tertiary_font": {
+        "family": "Barlow",
+        "subsets": "latin",
+        "fontWeight": "500"
+    },
+    "osf_typography_general_body_font_size": "16",
+    "osf_layout_general_content_width_px": "1320",
+    "osf_layout_general_layout_mode": "wide",
+    "osf_layout_general_layout_boxed_width": "1290",
+    "osf_layout_general_gutter_width": "30",
+    "osf_layout_general_content_width_padding": "15",
+    "osf_colors_general_primary": "#e74a30",
+    "background_image": "",
+    "background_preset": "default",
+    "osf_colors_general_secondary": "#e3c71f",
+    "osf_colors_general_heading": "#000",
+    "osf_colors_general_body": "#636363",
+    "background_color": "ffffff",
+    "osf_colors_page_title_bg_image": "http:\/\/localhost\/wordpress\/fundor\/wp-content\/uploads\/2020\/01\/breadcrumb-bg.jpg",
+    "osf_colors_page_title_bg": "#1a160e",
+    "osf_colors_page_title_heading_color": "#fff",
+    "osf_colors_page_title_breadcrumb_color": "#fff",
+    "osf_colors_page_title_breadcrumb_color_hover": "#e74a30",
+    "osf_header_enable_builder": true,
+    "osf_header_builder": "header",
+    "osf_typography_button_font_family": {
+        "family": "Bebas Neue",
+        "subsets": "latin",
+        "fontWeight": "400"
+    },
+    "osf_fixed_footer": false,
+    "osf_footer_layout": "footer",
+    "osf_colors_page_title_bg_position": "center top",
+    "osf_blog_archive_style": 1,
+    "osf_starter_settings": true,
+    "custom_css_post_id": -1,
+    "osf_theme_custom_style": "",
+    "custom_logo": 2733,
+    "osf_back_to_top_footer": false,
+    "osf_typography_general_quaternary_font": {
+        "family": "Barlow",
+        "subsets": "latin",
+        "fontWeight": "700"
+    },
+    "osf_colors_buttons_enable_custom": false,
+    "osf_colors_buttons_primary_bg": "#222222",
+    "osf_colors_buttons_primary_border": "#222222",
+    "osf_colors_buttons_primary_hover_bg": "#222222",
+    "osf_colors_buttons_primary_hover_border": "#222222",
+    "osf_colors_buttons_secondary_bg": "#e3c71f",
+    "osf_colors_buttons_secondary_border": "#767676",
+    "osf_colors_buttons_secondary_hover_bg": "#bda100",
+    "osf_colors_buttons_secondary_hover_border": "#767676",
+    "osf_background_video_type": "media",
+    "osf_page_404_page_enable": "custom",
+    "osf_page_404_page_custom": "3031"
+}

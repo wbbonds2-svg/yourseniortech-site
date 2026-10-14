@@ -1,0 +1,129 @@
+{
+    "elementor_cpt_support": [
+        "post",
+        "page",
+        "header",
+        "footer"
+    ],
+    "elementor_disable_color_schemes": "",
+    "elementor_disable_typography_schemes": "",
+    "elementor_default_generic_fonts": "Sans-serif",
+    "elementor_container_width": "1290",
+    "container_width": false,
+    "Layout Settings": false,
+    "elementor_space_between_widgets": "",
+    "elementor_stretched_section_container": "",
+    "elementor_page_title_selector": "",
+    "elementor_global_image_lightbox": "",
+    "elementor_css_print_method": "external",
+    "elementor_editor_break_lines": "",
+    "elementor_scheme_color": false,
+    "elementor_scheme_typography": false,
+    "elementor_scheme_color-picker": false,
+    "elementor_active_kit_settings": {
+        "default_generic_fonts": "Sans-serif",
+        "container_width": {
+            "unit": "px",
+            "size": "1290"
+        },
+        "global_image_lightbox": "yes",
+        "viewport_md": "",
+        "viewport_lg": "",
+        "system_colors": [
+            {
+                "_id": "primary",
+                "title": "Primary",
+                "color": "#E74A30"
+            },
+            {
+                "_id": "secondary",
+                "title": "Secondary",
+                "color": "#E3C71F"
+            },
+            {
+                "_id": "text",
+                "title": "Text",
+                "color": "#636363"
+            },
+            {
+                "_id": "accent",
+                "title": "Accent",
+                "color": ""
+            }
+        ],
+        "custom_colors": [
+            {
+                "_id": "603c8a37",
+                "title": "Saved Color #1",
+                "color": "#000000"
+            },
+            {
+                "_id": "1e90300",
+                "title": "Saved Color #2",
+                "color": "#000000"
+            },
+            {
+                "_id": "f9a2ffc",
+                "title": "Saved Color #3",
+                "color": "#000000"
+            },
+            {
+                "_id": "20a317df",
+                "title": "Saved Color #4",
+                "color": "#FFFFFF"
+            },
+            {
+                "_id": "29778de6",
+                "title": "Saved Color #5",
+                "color": "#FED857"
+            },
+            {
+                "_id": "433281d1",
+                "title": "Saved Color #6",
+                "color": "#FFFFFF"
+            },
+            {
+                "_id": "584c66b1",
+                "title": "Saved Color #7",
+                "color": "#666666"
+            },
+            {
+                "_id": "7228d2df",
+                "title": "Saved Color #8",
+                "color": "#666666"
+            }
+        ],
+        "system_typography": [
+            {
+                "_id": "primary",
+                "title": "Primary Headline",
+                "typography_typography": "custom",
+                "typography_font_family": "",
+                "typography_font_weight": ""
+            },
+            {
+                "_id": "secondary",
+                "title": "Secondary Headline",
+                "typography_typography": "custom",
+                "typography_font_family": "",
+                "typography_font_weight": ""
+            },
+            {
+                "_id": "text",
+                "title": "Body Text",
+                "typography_typography": "custom",
+                "typography_font_family": "",
+                "typography_font_weight": ""
+            },
+            {
+                "_id": "accent",
+                "title": "Accent Text",
+                "typography_typography": "custom",
+                "typography_font_family": "",
+                "typography_font_weight": ""
+            }
+        ],
+        "viewport_mobile": "",
+        "viewport_tablet": ""
+    }
+}

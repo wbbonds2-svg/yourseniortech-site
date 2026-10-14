@@ -1,0 +1,222 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "opal-icon";
+  src: url("https://yourseniortech.com/wp-content/plugins/fundor-core/assets/css/elementor/fonts/opal-icon.eot");
+  src: url("https://yourseniortech.com/wp-content/plugins/fundor-core/assets/css/elementor/fonts/opal-icon.eot#iefix") format("eot"), url("https://yourseniortech.com/wp-content/plugins/fundor-core/assets/css/elementor/fonts/opal-icon.woff2") format("woff2"), url("https://yourseniortech.com/wp-content/plugins/fundor-core/assets/css/elementor/fonts/opal-icon.woff") format("woff"), url("https://yourseniortech.com/wp-content/plugins/fundor-core/assets/css/elementor/fonts/opal-icon.ttf") format("truetype"), url("https://yourseniortech.com/wp-content/plugins/fundor-core/assets/css/elementor/fonts/opal-icon.svg#opal-icon") format("svg"); }
+
+[class*="opal-icon-"]:before {
+  font-family: "opal-icon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none; }
+
+.opal-icon {
+  font-family: "opal-icon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none; }
+
+.opal-icon-angle-down:before {
+  content: ""; }
+
+.opal-icon-angle-up:before {
+  content: ""; }
+
+.opal-icon-calendar:before {
+  content: ""; }
+
+.opal-icon-campaign:before {
+  content: ""; }
+
+.opal-icon-campaigns-2:before {
+  content: ""; }
+
+.opal-icon-check-circle:before {
+  content: ""; }
+
+.opal-icon-check:before {
+  content: ""; }
+
+.opal-icon-children:before {
+  content: ""; }
+
+.opal-icon-close:before {
+  content: ""; }
+
+.opal-icon-cog:before {
+  content: ""; }
+
+.opal-icon-disaster:before {
+  content: ""; }
+
+.opal-icon-donate:before {
+  content: ""; }
+
+.opal-icon-earth:before {
+  content: ""; }
+
+.opal-icon-education-2:before {
+  content: ""; }
+
+.opal-icon-education:before {
+  content: ""; }
+
+.opal-icon-email:before {
+  content: ""; }
+
+.opal-icon-emergency:before {
+  content: ""; }
+
+.opal-icon-envelope-open-text:before {
+  content: ""; }
+
+.opal-icon-envelope:before {
+  content: ""; }
+
+.opal-icon-family:before {
+  content: ""; }
+
+.opal-icon-getinvolved:before {
+  content: ""; }
+
+.opal-icon-givemoney:before {
+  content: ""; }
+
+.opal-icon-givetime:before {
+  content: ""; }
+
+.opal-icon-health:before {
+  content: ""; }
+
+.opal-icon-invest:before {
+  content: ""; }
+
+.opal-icon-lightbulb-on:before {
+  content: ""; }
+
+.opal-icon-live:before {
+  content: ""; }
+
+.opal-icon-long-arrow-down:before {
+  content: ""; }
+
+.opal-icon-long-arrow-left:before {
+  content: ""; }
+
+.opal-icon-long-arrow-right:before {
+  content: ""; }
+
+.opal-icon-media:before {
+  content: ""; }
+
+.opal-icon-medical:before {
+  content: ""; }
+
+.opal-icon-menu:before {
+  content: ""; }
+
+.opal-icon-minus-circle:before {
+  content: ""; }
+
+.opal-icon-minus-regular:before {
+  content: ""; }
+
+.opal-icon-minus:before {
+  content: ""; }
+
+.opal-icon-network:before {
+  content: ""; }
+
+.opal-icon-phone-square-2:before {
+  content: ""; }
+
+.opal-icon-phone:before {
+  content: ""; }
+
+.opal-icon-phone3:before {
+  content: ""; }
+
+.opal-icon-play-2:before {
+  content: ""; }
+
+.opal-icon-play-circle:before {
+  content: ""; }
+
+.opal-icon-play:before {
+  content: ""; }
+
+.opal-icon-plus-circle:before {
+  content: ""; }
+
+.opal-icon-plus-regular:before {
+  content: ""; }
+
+.opal-icon-plus:before {
+  content: ""; }
+
+.opal-icon-protection:before {
+  content: ""; }
+
+.opal-icon-quote-left:before {
+  content: ""; }
+
+.opal-icon-quote:before {
+  content: ""; }
+
+.opal-icon-quote2:before {
+  content: ""; }
+
+.opal-icon-search-plus:before {
+  content: ""; }
+
+.opal-icon-search:before {
+  content: ""; }
+
+.opal-icon-share-alt:before {
+  content: ""; }
+
+.opal-icon-sharing:before {
+  content: ""; }
+
+.opal-icon-sliders-v:before {
+  content: ""; }
+
+.opal-icon-support:before {
+  content: ""; }
+
+.opal-icon-times:before {
+  content: ""; }
+
+.opal-icon-toggle:before {
+  content: ""; }
+
+.opal-icon-topic:before {
+  content: ""; }
+
+.opal-icon-user-headset:before {
+  content: ""; }
+
+.opal-icon-user:before {
+  content: ""; }
+
+.opal-icon-users:before {
+  content: ""; }
+
+.opal-icon-video:before {
+  content: ""; }
+
+.opal-icon-volunteer:before {
+  content: ""; }
+
+.opal-icon-wildlife:before {
+  content: ""; }
+
+/*# sourceMappingURL=icons.css.map */
