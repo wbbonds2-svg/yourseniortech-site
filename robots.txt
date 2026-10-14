@@ -1,9 +1,15 @@
-# Default robots file version:2
 User-agent: *
-Disallow: /calendar/action*
-Disallow: /events/action*
-Disallow: /cdn-cgi*
-Allow: /*.css
-Allow: /*.js
-Disallow: /*?
-Crawl-delay: 3
+Allow: /
+Disallow: /tools/
+Disallow: /thank-you/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://wbbonds2-svg.github.io/yourseniortech-site/sitemap.xml
