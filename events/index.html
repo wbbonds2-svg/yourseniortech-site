@@ -134,13 +134,13 @@
   <p><b>Wednesday, February 17, 2027, 11:00 AM to 1:00 PM</b><br>Burien Community Center, Burien, WA</p>
   <p>Bring any device and get free one-on-one help from trained student mentors.</p></div>
 </article>
-<div class="empty" id="no-upcoming" hidden><h2>New clinic dates are on the way</h2>
+<div class="empty" id="no-upcoming" style="display:none"><h2>New clinic dates are on the way</h2>
 <p>We post Mobile Tech Clinics and workshops here as soon as host sites confirm them. To find out about the next clinic near you, call <a href="tel:+12536175848">253-617-5848</a> or email <a href="mailto:support@yourseniortech.com">support@yourseniortech.com</a>.</p></div>
 <script>
 (function(){
   var n=new Date(), p=function(x){return x<10?'0'+x:''+x;}, today=n.getFullYear()+'-'+p(n.getMonth()+1)+'-'+p(n.getDate()), shown=0;
-  document.querySelectorAll('#upcoming-events article[data-date]').forEach(function(a){ if(a.getAttribute('data-date')<today){a.hidden=true;} else {shown++;} });
-  if(!shown) document.getElementById('no-upcoming').hidden=false;
+  document.querySelectorAll('#upcoming-events article[data-date]').forEach(function(a){ if(a.getAttribute('data-date')<today){a.style.display='none';} else {shown++;} });
+  if(!shown) document.getElementById('no-upcoming').style.display='';
 })();
 </script></div>
 </div></section>
