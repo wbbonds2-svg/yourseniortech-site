@@ -57,7 +57,7 @@
   <table class="cal-grid"><thead><tr><th scope="col" abbr="Sunday">Sun</th><th scope="col" abbr="Monday">Mon</th><th scope="col" abbr="Tuesday">Tue</th><th scope="col" abbr="Wednesday">Wed</th><th scope="col" abbr="Thursday">Thu</th><th scope="col" abbr="Friday">Fri</th><th scope="col" abbr="Saturday">Sat</th></tr></thead><tbody></tbody></table>
   <p class="cal-note small"></p>
 </div>
-<script type="application/json" id="events-data">[{"date": "2026-08-26", "title": "Technology Help for Seniors pop-up clinic", "id": "event-2026-08-26-technology-help-for-seniors-pop-up-clinic", "past": true}]</script>
+<script type="application/json" id="events-data">[{"date":"2026-08-26","title":"Technology Help for Seniors pop-up clinic","id":"event-2026-08-26-technology-help-for-seniors-pop-up-clinic"},{"date":"2026-11-30","title":"Tech Talk: Smartphone Basics","id":"event-2026-11-30-tech-talk-smartphone-basics"},{"date":"2026-12-02","title":"Tech Talk: Online Safety","id":"event-2026-12-02-tech-talk-online-safety"},{"date":"2026-12-07","title":"Tech Talk: Passwords Without the Headache","id":"event-2026-12-07-tech-talk-passwords-without-the-headache"},{"date":"2026-12-09","title":"Tech Talk: Smartphone Advanced","id":"event-2026-12-09-tech-talk-smartphone-advanced"},{"date":"2026-12-21","title":"Mobile Tech Clinic","id":"event-2026-12-21-mobile-tech-clinic"},{"date":"2027-01-27","title":"Mobile Tech Clinic","id":"event-2027-01-27-mobile-tech-clinic"},{"date":"2027-02-17","title":"Mobile Tech Clinic","id":"event-2027-02-17-mobile-tech-clinic"}]</script>
 <script>
 (function(){
   var ev=JSON.parse(document.getElementById('events-data').textContent), cal=document.getElementById('cal');
@@ -73,7 +73,7 @@
       var key=y+'-'+pad(m+1)+'-'+pad(d), list=ev.filter(function(x){return x.date===key;});
       var cls=(key===today?' cal-today':'')+(list.length?' cal-has':'');
       html+='<td class="'+cls.trim()+'"><span class="cal-day">'+d+'</span>';
-      list.forEach(function(x){ count++; html+='<a class="cal-event'+(x.past?' cal-past':'')+'" href="#'+x.id+'">'+x.title+'</a>'; });
+      list.forEach(function(x){ count++; html+='<a class="cal-event'+(x.date<today?' cal-past':'')+'" href="#'+x.id+'">'+x.title+'</a>'; });
       html+='</td>';
       if((first+d)%7===0 && d<days) html+='</tr><tr>';
     }
@@ -85,8 +85,58 @@
   draw();
 })();
 </script>
-  <div style="margin-top:48px"><div class="empty"><h2>New clinic dates are on the way</h2>
-<p>We post Mobile Tech Clinics and workshops here as soon as host sites confirm them. To find out about the next clinic near you, call <a href="tel:+12536175848">253-617-5848</a> or email <a href="mailto:support@yourseniortech.com">support@yourseniortech.com</a>.</p></div></div>
+  <div style="margin-top:48px" id="upcoming-events"><h2>Upcoming events</h2>
+<article class="event" id="event-2026-11-30-tech-talk-smartphone-basics" data-date="2026-11-30">
+  <div class="event-date"><span>Nov</span><b>30</b><span>Mon</span></div>
+  <div><h3>Tech Talk: Smartphone Basics</h3>
+  <p><b>Monday, November 30, 2026, 1:00 to 2:00 PM</b><br>White Center Library</p>
+  <p>A free group class on the basics of using your smartphone, with time for questions.</p></div>
+</article>
+<article class="event" id="event-2026-12-02-tech-talk-online-safety" data-date="2026-12-02">
+  <div class="event-date"><span>Dec</span><b>2</b><span>Wed</span></div>
+  <div><h3>Tech Talk: Online Safety</h3>
+  <p><b>Wednesday, December 2, 2026, 1:00 to 2:00 PM</b><br>White Center Library</p>
+  <p>A free group class on staying safe online and spotting scams, with time for questions.</p></div>
+</article>
+<article class="event" id="event-2026-12-07-tech-talk-passwords-without-the-headache" data-date="2026-12-07">
+  <div class="event-date"><span>Dec</span><b>7</b><span>Mon</span></div>
+  <div><h3>Tech Talk: Passwords Without the Headache</h3>
+  <p><b>Monday, December 7, 2026, 1:00 to 2:00 PM</b><br>White Center Library</p>
+  <p>A free group class on simple, safe ways to manage your passwords, with time for questions.</p></div>
+</article>
+<article class="event" id="event-2026-12-09-tech-talk-smartphone-advanced" data-date="2026-12-09">
+  <div class="event-date"><span>Dec</span><b>9</b><span>Wed</span></div>
+  <div><h3>Tech Talk: Smartphone Advanced</h3>
+  <p><b>Wednesday, December 9, 2026, 2:00 to 3:00 PM</b><br>White Center Library</p>
+  <p>A free group class that goes beyond the basics on your smartphone, with time for questions.</p></div>
+</article>
+<article class="event" id="event-2026-12-21-mobile-tech-clinic" data-date="2026-12-21">
+  <div class="event-date"><span>Dec</span><b>21</b><span>Mon</span></div>
+  <div><h3>Mobile Tech Clinic</h3>
+  <p><b>Monday, December 21, 2026, 10:00 AM to 12:00 PM</b><br>Kent Senior Center, Kent, WA</p>
+  <p>Bring any device and get free one-on-one help from trained student mentors.</p></div>
+</article>
+<article class="event" id="event-2027-01-27-mobile-tech-clinic" data-date="2027-01-27">
+  <div class="event-date"><span>Jan</span><b>27</b><span>Wed</span></div>
+  <div><h3>Mobile Tech Clinic</h3>
+  <p><b>Wednesday, January 27, 2027, 3:00 to 5:00 PM</b><br>SeaTac, WA (location to be announced)</p>
+  <p>Bring any device and get free one-on-one help from trained student mentors.</p></div>
+</article>
+<article class="event" id="event-2027-02-17-mobile-tech-clinic" data-date="2027-02-17">
+  <div class="event-date"><span>Feb</span><b>17</b><span>Wed</span></div>
+  <div><h3>Mobile Tech Clinic</h3>
+  <p><b>Wednesday, February 17, 2027, 11:00 AM to 1:00 PM</b><br>Burien Community Center, Burien, WA</p>
+  <p>Bring any device and get free one-on-one help from trained student mentors.</p></div>
+</article>
+<div class="empty" id="no-upcoming" hidden><h2>New clinic dates are on the way</h2>
+<p>We post Mobile Tech Clinics and workshops here as soon as host sites confirm them. To find out about the next clinic near you, call <a href="tel:+12536175848">253-617-5848</a> or email <a href="mailto:support@yourseniortech.com">support@yourseniortech.com</a>.</p></div>
+<script>
+(function(){
+  var n=new Date(), p=function(x){return x<10?'0'+x:''+x;}, today=n.getFullYear()+'-'+p(n.getMonth()+1)+'-'+p(n.getDate()), shown=0;
+  document.querySelectorAll('#upcoming-events article[data-date]').forEach(function(a){ if(a.getAttribute('data-date')<today){a.hidden=true;} else {shown++;} });
+  if(!shown) document.getElementById('no-upcoming').hidden=false;
+})();
+</script></div>
 </div></section>
 <section class="section"><div class="wrap"><h2>Recent clinics</h2><article class="event" id="event-2026-08-26-technology-help-for-seniors-pop-up-clinic">
   <div class="event-date"><span>Aug</span><b>26</b><span>Wed</span></div>
