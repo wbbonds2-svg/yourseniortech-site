@@ -101,9 +101,58 @@
 
 <section class="section"><div class="wrap">
   <h2>Upcoming clinics</h2>
-  <div class="empty"><h3>New clinic dates are on the way</h3>
+  <div id="home-events">
+<article class="event" data-date="2026-11-30">
+  <div class="event-date"><span>Nov</span><b>30</b><span>Mon</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2026-11-30-tech-talk-smartphone-basics">Tech Talk: Smartphone Basics</a></h3>
+  <p><b>Monday, November 30, 2026, 1:00 to 2:00 PM</b><br>White Center Library</p></div>
+</article>
+<article class="event" data-date="2026-12-02">
+  <div class="event-date"><span>Dec</span><b>2</b><span>Wed</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2026-12-02-tech-talk-online-safety">Tech Talk: Online Safety</a></h3>
+  <p><b>Wednesday, December 2, 2026, 1:00 to 2:00 PM</b><br>White Center Library</p></div>
+</article>
+<article class="event" data-date="2026-12-04">
+  <div class="event-date"><span>Dec</span><b>4</b><span>Fri</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2026-12-04-mobile-tech-clinic">Mobile Tech Clinic</a></h3>
+  <p><b>Friday, December 4, 2026, 1:30 to 3:30 PM</b><br>Federal Way, WA (location to be announced)</p></div>
+</article>
+<article class="event" data-date="2026-12-07">
+  <div class="event-date"><span>Dec</span><b>7</b><span>Mon</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2026-12-07-tech-talk-passwords-without-the-headache">Tech Talk: Passwords Without the Headache</a></h3>
+  <p><b>Monday, December 7, 2026, 1:00 to 2:00 PM</b><br>White Center Library</p></div>
+</article>
+<article class="event" data-date="2026-12-09">
+  <div class="event-date"><span>Dec</span><b>9</b><span>Wed</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2026-12-09-tech-talk-smartphone-advanced">Tech Talk: Smartphone Advanced</a></h3>
+  <p><b>Wednesday, December 9, 2026, 2:00 to 3:00 PM</b><br>White Center Library</p></div>
+</article>
+<article class="event" data-date="2026-12-21">
+  <div class="event-date"><span>Dec</span><b>21</b><span>Mon</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2026-12-21-mobile-tech-clinic">Mobile Tech Clinic</a></h3>
+  <p><b>Monday, December 21, 2026, 10:00 AM to 12:00 PM</b><br>Kent Senior Center, Kent, WA</p></div>
+</article>
+<article class="event" data-date="2027-01-27">
+  <div class="event-date"><span>Jan</span><b>27</b><span>Wed</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2027-01-27-mobile-tech-clinic">Mobile Tech Clinic</a></h3>
+  <p><b>Wednesday, January 27, 2027, 3:00 to 5:00 PM</b><br>SeaTac, WA (location to be announced)</p></div>
+</article>
+<article class="event" data-date="2027-02-17">
+  <div class="event-date"><span>Feb</span><b>17</b><span>Wed</span></div>
+  <div><h3><a href="/yourseniortech-site/events/#event-2027-02-17-mobile-tech-clinic">Mobile Tech Clinic</a></h3>
+  <p><b>Wednesday, February 17, 2027, 11:00 AM to 1:00 PM</b><br>Burien Community Center, Burien, WA</p></div>
+</article>
+<div class="empty" id="home-no-events" hidden><h3>New clinic dates are on the way</h3>
 <p>We post clinics here as soon as host sites confirm them. To find the next clinic near you, call <a href="tel:+12536175848">253-617-5848</a>, or ask us to bring one to your community.</p>
 <div class="btn-row"><a class="btn btn--primary" href="/yourseniortech-site/events/">See the events page</a><a class="btn btn--outline" href="/yourseniortech-site/community-partnerships/">Request a clinic</a></div></div>
+<div class="btn-row" id="home-events-btns"><a class="btn btn--primary" href="/yourseniortech-site/events/">See all events</a><a class="btn btn--outline" href="/yourseniortech-site/community-partnerships/">Request a clinic</a></div>
+<script>
+(function(){
+  var n=new Date(), p=function(x){return x<10?'0'+x:''+x;}, today=n.getFullYear()+'-'+p(n.getMonth()+1)+'-'+p(n.getDate()), shown=0;
+  document.querySelectorAll('#home-events article[data-date]').forEach(function(a){ if(a.getAttribute('data-date')<today||shown>=3){a.hidden=true;} else {shown++;} });
+  if(!shown){ document.getElementById('home-no-events').hidden=false; document.getElementById('home-events-btns').hidden=true; }
+})();
+</script></div>
 </div></section>
 
 <section class="section section--navy"><div class="wrap">
@@ -124,9 +173,9 @@
 </div></section>
 
 <section class="section section--sky"><div class="wrap">
-  <h2>Trusted community partners</h2>
-  <p>We work with cities, libraries, senior living communities, and local businesses to bring free help where older adults already are.</p>
-  <div class="logos"><div><img src="/yourseniortech-site/assets/img/partner-riverview.png" alt="Riverview Retirement Community" loading="lazy"></div><div><img src="/yourseniortech-site/assets/img/partner-intech.png" alt="inTech Consulting" loading="lazy"></div><div><img src="/yourseniortech-site/assets/img/partner-valley-spay.png" alt="Valley Spay and Neuter Clinic" loading="lazy"></div></div>
+  <h2>Our sponsors</h2>
+  <p>Thank you to the sponsors who help keep our programs free. We also work with cities, libraries, senior living communities, and local businesses to bring free help where older adults already are.</p>
+  <div class="logos"><div><img src="/yourseniortech-site/assets/img/partner-intech.png" alt="inTech Consulting" loading="lazy"></div><div style="display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:1.35rem;line-height:1.2">Ezee Fiber</div><div style="display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:1.35rem;line-height:1.2">WaFd Bank</div><div style="display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:1.35rem;line-height:1.2">First Citizens Bank</div></div>
   <p style="margin-top:24px"><a href="/yourseniortech-site/community-partnerships/">Become a partner or sponsor</a></p>
 </div></section>
 
