@@ -1,0 +1,30 @@
+# Senior Tech Foundation
+
+> Senior Tech Foundation is a Washington 501(c)(3) nonprofit (EIN 41-3502697) that gives older adults in King and Pierce Counties free, one-on-one technology help. Trained high school and college student mentors help with phones, tablets, computers, apps, online safety, scams, and AI at Mobile Tech Clinics and Tech Talks in the community.
+
+Key facts:
+- Cost: free for older adults, families, and caregivers. Programs are funded by donations, grants, and sponsors.
+- Area served: King County and Pierce County, Washington.
+- Phone: 253-617-5848. General help: support@yourseniortech.com. Partnerships, sponsorships, grants, and media: Ashlyn Sidhu, Executive Director, ashlyn@yourseniortech.com.
+- Senior Tech Foundation is separate from Your Senior Tech, a for-profit company that offers paid services.
+
+## Get help
+- [Free tech help for seniors](https://wbbonds2-svg.github.io/yourseniortech-site/free-tech-help-for-seniors/): what one-on-one help covers and how it works
+- [Mobile Tech Clinics](https://wbbonds2-svg.github.io/yourseniortech-site/mobile-tech-clinics/): free pop-up clinics where older adults bring any device
+- [Tech Talks and classes](https://wbbonds2-svg.github.io/yourseniortech-site/technology-classes-for-seniors/): free group classes, usually one to two hours
+- [Upcoming events](https://wbbonds2-svg.github.io/yourseniortech-site/events/): dates, times, and locations of clinics and Tech Talks
+- [Scam prevention](https://wbbonds2-svg.github.io/yourseniortech-site/scam-prevention-for-seniors/): warning signs of a scam and what to do
+- [AI classes for older adults](https://wbbonds2-svg.github.io/yourseniortech-site/ai-classes-for-seniors/): plain-language introductions to AI
+- [Free tech help in King County](https://wbbonds2-svg.github.io/yourseniortech-site/free-tech-help-seniors-king-county/)
+- [FAQ](https://wbbonds2-svg.github.io/yourseniortech-site/faq/)
+
+## Get involved
+- [Host a free program](https://wbbonds2-svg.github.io/yourseniortech-site/community-partnerships/): for senior centers, libraries, senior living, and community organizations
+- [Volunteer](https://wbbonds2-svg.github.io/yourseniortech-site/volunteer/): student Tech Mentors and the Student Leadership Team
+- [Sponsor a Mobile Tech Clinic](https://wbbonds2-svg.github.io/yourseniortech-site/sponsor/): sponsorship levels and form
+- [Donate](https://wbbonds2-svg.github.io/yourseniortech-site/donate/)
+
+## About
+- [About and Board of Directors](https://wbbonds2-svg.github.io/yourseniortech-site/about/): mission, story, values, and board
+- [Our impact and information for funders](https://wbbonds2-svg.github.io/yourseniortech-site/our-impact/): results to date, how impact is measured, and details grantmakers ask for
+- [Contact](https://wbbonds2-svg.github.io/yourseniortech-site/contact/)
