@@ -12,4 +12,4 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://wbbonds2-svg.github.io/yourseniortech-site/sitemap.xml
+Sitemap: https://yourseniortech.org/sitemap.xml

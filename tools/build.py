@@ -14,8 +14,8 @@ ROOT = Path(__file__).resolve().parent.parent
 TOOLS = ROOT / "tools"
 
 # ---- Site settings -------------------------------------------------------
-SITE_URL = "https://wbbonds2-svg.github.io/yourseniortech-site"   # no trailing slash
-BASE = "/yourseniortech-site"                                     # "" once on yourseniortech.org
+SITE_URL = "https://yourseniortech.org"   # no trailing slash
+BASE = ""                                                         # "" once on yourseniortech.org
 GA4_ID = ""            # e.g. "G-XXXXXXX" — leave empty until Analytics is set up
 GSC_VERIFY = ""        # Google Search Console HTML-tag verification code
 BING_VERIFY = ""       # Bing Webmaster Tools verification code
