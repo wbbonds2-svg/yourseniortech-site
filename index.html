@@ -142,15 +142,15 @@
   <div><h3><a href="/yourseniortech-site/events/#event-2027-02-17-mobile-tech-clinic">Mobile Tech Clinic</a></h3>
   <p><b>Wednesday, February 17, 2027, 11:00 AM to 1:00 PM</b><br>Burien Community Center, Burien, WA</p></div>
 </article>
-<div class="empty" id="home-no-events" hidden><h3>New clinic dates are on the way</h3>
+<div class="empty" id="home-no-events" style="display:none"><h3>New clinic dates are on the way</h3>
 <p>We post clinics here as soon as host sites confirm them. To find the next clinic near you, call <a href="tel:+12536175848">253-617-5848</a>, or ask us to bring one to your community.</p>
 <div class="btn-row"><a class="btn btn--primary" href="/yourseniortech-site/events/">See the events page</a><a class="btn btn--outline" href="/yourseniortech-site/community-partnerships/">Request a clinic</a></div></div>
 <div class="btn-row" id="home-events-btns"><a class="btn btn--primary" href="/yourseniortech-site/events/">See all events</a><a class="btn btn--outline" href="/yourseniortech-site/community-partnerships/">Request a clinic</a></div>
 <script>
 (function(){
   var n=new Date(), p=function(x){return x<10?'0'+x:''+x;}, today=n.getFullYear()+'-'+p(n.getMonth()+1)+'-'+p(n.getDate()), shown=0;
-  document.querySelectorAll('#home-events article[data-date]').forEach(function(a){ if(a.getAttribute('data-date')<today||shown>=3){a.hidden=true;} else {shown++;} });
-  if(!shown){ document.getElementById('home-no-events').hidden=false; document.getElementById('home-events-btns').hidden=true; }
+  document.querySelectorAll('#home-events article[data-date]').forEach(function(a){ if(a.getAttribute('data-date')<today||shown>=3){a.style.display='none';} else {shown++;} });
+  if(!shown){ document.getElementById('home-no-events').style.display=''; document.getElementById('home-events-btns').style.display='none'; }
 })();
 </script></div>
 </div></section>
