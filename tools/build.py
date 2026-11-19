@@ -498,7 +498,7 @@ def home():
   </div>
 </div></section>
 """
-    page("/", "Free Tech Help for Seniors in King & Pierce Counties | Senior Tech Foundation",
+    page("/", "Senior Tech Foundation | Free Tech Help for Seniors in King & Pierce Counties",
          "Senior Tech Foundation is a Washington nonprofit offering free one-on-one tech help, Mobile Tech Clinics, and Tech Talks for older adults in King and Pierce Counties.",
          body, extra_ld=[faq_ld(faq_items()[:5])] + [event_ld(x) for x in ev])
 
