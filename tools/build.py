@@ -256,7 +256,7 @@ document.addEventListener('submit',function(ev){{gtag('event','form_submit',{{fo
 <meta property="og:image" content="{abs_url('/assets/img/' + og_image)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10263a">
-<link rel="icon" href="{url('/assets/img/favicon.png')}" type="image/png">
+<link rel="icon" href="{url('/favicon.ico')}" sizes="any"><link rel="icon" href="{url('/assets/img/favicon-48.png')}" sizes="48x48" type="image/png"><link rel="icon" href="{url('/assets/img/icon-192.png')}" sizes="192x192" type="image/png"><link rel="apple-touch-icon" href="{url('/assets/img/apple-touch-icon.png')}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700;800&display=swap" rel="stylesheet">
